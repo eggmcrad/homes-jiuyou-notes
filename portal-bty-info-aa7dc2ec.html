@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询 · 对照参考 · 延伸阅读 — B体育 · 介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f4f6;
+      font-family: "Segoe UI", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    }
+    /* hero 开场 */
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem 2.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .hero .emblem {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #1a2634;
+      margin-bottom: 0.6rem;
+    }
+    .hero .emblem small {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #5e6f7d;
+      margin-left: 0.4rem;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 1rem auto 0;
+      font-size: 1.05rem;
+      color: #3d4a59;
+    }
+    /* 承接段落 —— 日常查询 */
+    .intro-text {
+      font-size: 1rem;
+      color: #34495e;
+    }
+    .intro-text p {
+      margin-bottom: 1rem;
+    }
+    .intro-text .highlight {
+      background: #f0f3f8;
+      padding: 0.1rem 0.4rem;
+      border-radius: 6px;
+      font-weight: 450;
+    }
+    /* 特点列表 — 对照与延伸 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+    .feature-item {
+      flex: 1 1 200px;
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 1.4rem 1.2rem;
+      border: 1px solid #e4e8ed;
+      transition: background 0.1s ease;
+    }
+    .feature-item:hover {
+      background: #f0f4fa;
+    }
+    .feature-item .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+    .feature-item h4 {
+      font-weight: 550;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+      color: #1e2a36;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #4a5b6b;
+      line-height: 1.5;
+    }
+    /* 场景块 — 温和叙述 */
+    .scene-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .scene-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed #e4e9ef;
+    }
+    .scene-row:last-child {
+      border-bottom: none;
+    }
+    .scene-label {
+      flex: 0 0 80px;
+      font-weight: 500;
+      color: #3b4e62;
+    }
+    .scene-desc {
+      flex: 1;
+      color: #2f4052;
+    }
+    /* 提示区 FAQ 摘要 */
+    .tip-block {
+      background: #f7f9fc;
+      border-left: 4px solid #6c7a89;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      margin: 1.2rem 0 0.5rem;
+    }
+    .tip-block strong {
+      color: #20303e;
+    }
+    .faq-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.8rem;
+      margin-top: 0.8rem;
+    }
+    .faq-q {
+      font-size: 0.95rem;
+      background: #eef2f7;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      color: #2c3e50;
+    }
+    /* 温和结尾 */
+    .closing {
+      text-align: center;
+      padding: 1.8rem 1rem 1rem;
+      color: #4b5d6b;
+      border-top: 1px solid #e4e9ef;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .closing a {
+      color: #1e3a5f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #a0b6cc;
+    }
+    .closing a:hover {
+      border-bottom: 1px solid #1e3a5f;
+    }
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .card {
+        padding: 1.4rem 1rem;
+      }
+      .hero {
+        padding: 2rem 1rem 1.8rem;
+      }
+      .hero .emblem {
+        font-size: 2rem;
+      }
+      .feature-grid {
+        gap: 1rem;
+      }
+      .scene-label {
+        flex: 0 0 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 开场短句 -->
+    <div class="hero card" style="border-radius: 18px;">
+      <div class="emblem">◈ B体育 <small>· 查询 · 对照 · 延伸</small></div>
+      <p>一本随手翻看的运动信息笔记，从日常查询到延伸阅读，慢慢理清脉络。</p>
+    </div>
+
+    <!-- 承接段落：日常查询和对照 -->
+    <div class="card intro-text">
+      <p>有时只是想知道某项赛事近况，或者对比不同联赛的数据习惯。在这些零散的需求里，<span class="highlight">B体育</span> 更像一个信息整理夹——把分散的规程、积分、统计口径收拢到一起，方便随时翻阅对照。不必每次都从头搜索，攒下的记录能帮人更快进入状态。</p>
+      <p>它不提供结论，只呈现经过筛选的参照。比如把不同来源的规则并列在一起，标出容易混淆的细节；或者整理历史交手记录，让人自己判断趋势。这种对照式的呈现，很适合需要在多个维度之间来回比较的使用场景。</p>
+    </div>
+
+    <!-- 特点列表：从整理到延伸 -->
+    <div class="card">
+      <h3 style="font-weight: 500; margin-bottom: 0.5rem; color: #1f2c3a;">日常查找中积累的几点便利</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon">📋</div>
+          <h4>条目式对照</h4>
+          <p>将同类信息并排展示，差异点一目了然，减少来回翻页的疲劳。</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🔖</div>
+          <h4>延伸参考</h4>
+          <p>每个条目附带相关背景或术语解释，方便从一条信息跳转到更宽的知识面。</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📎</div>
+          <h4>来源标注</h4>
+          <p>关键数据均注明出处或参照平台，可回溯校验，适合需要踏实对照的人。</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🧩</div>
+          <h4>轻量化整理</h4>
+          <p>不堆砌图表，以文字和简洁结构为主，加载快，专注内容本身。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 场景：日常使用片段 -->
+    <div class="card">
+      <h3 style="font-weight: 500; margin-bottom: 1rem; color: #1f2c3a;">一些可以嵌入日常的场景</h3>
+      <div class="scene-box">
+        <div class="scene-row">
+          <span class="scene-label">📌 查询时</span>
+          <span class="scene-desc">想快速确认某项赛事的赛制变化，打开对照页，新旧规则并列，差异用颜色标出，不用自己再翻几个页面比对。</span>
+        </div>
+        <div class="scene-row">
+          <span class="scene-label">📌 对照中</span>
+          <span class="scene-desc">同时查看两支球队的近期数据，表格按轮次对齐，进球、失球、控球率放在同一视线范围内，省去手动切换标签页。</span>
+        </div>
+        <div class="scene-row">
+          <span class="scene-label">📌 延伸阅读</span>
+          <span class="scene-desc">从一条转会记录点开，关联出同位置球员对比、年龄分布、出场时间统计，不必重新搜索，信息链自然展开。</span>
+        </div>
+      </div>
+
+      <!-- 提示 / FAQ 摘要 -->
+      <div class="tip-block">
+        <strong>💡 小提示</strong> — 信息整理的目标是降低查找成本，而不是替代判断。当你需要更完整的背景时，<a href="https://portal-bty.com" style="color: #1e3a5f; text-decoration: underline; text-underline-offset: 2px;">B体育</a> 可以作为起点，帮你把零散线索归拢到一起。
+        <div class="faq-summary">
+          <span class="faq-q">❓ 数据多久更新？</span>
+          <span class="faq-q">❓ 可以自己添加对照吗？</span>
+          <span class="faq-q">❓ 是否有手机版？</span>
+          <span class="faq-q">❓ 延伸链接可靠吗？</span>
+        </div>
+        <div style="margin-top: 0.6rem; font-size: 0.9rem; color: #4b6277;">—— 这些问题在对应页面都有简要说明，方便随时查阅。</div>
+      </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing card">
+      <p style="margin-bottom: 0.6rem;">信息整理是为了更从容地查找，而不是被信息推着走。偶尔停下来翻一翻 <a href="https://portal-bty.com">B体育</a> 的页面，也许会发现之前忽略的对照线索。</p>
+      <p style="font-size: 0.9rem; color: #607686;">—— 一份安静的资料页，为日常查询和延伸阅读留出空间。</p>
+    </div>
+
+  </div>
+</body>
+</html>
